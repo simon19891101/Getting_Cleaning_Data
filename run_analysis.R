@@ -26,6 +26,6 @@ DT_test <- DT_test %>% mutate(activity_label = Act_LB[LB_test$V1,"V2"],subject =
 DT_train <- DT_train %>% mutate(activity_label = Act_LB[LB_train$V1,"V2"],subject = c(SB_train$V1))
 DT_merge <- rbind(DT_test,DT_train)
 DT_merge <- setnames(DT_merge,grep("^V",names(DT_merge)),as.character(DT_feature$V2))
-DT_merge_mean_std <- DT_merge[,c(grep("*[mM][eE][aA][nN]*|*[sS][tT][dD]*",DT_feature$V2,value=TRUE),"activity_label","subject")]
+DT_merge_mean_std <- DT_merge[,c(grep("*mean\\(\\)*|*std\\(\\)*",DT_feature$V2,value=TRUE),"activity_label","subject")]
 DT_new <- as.data.table(DT_merge_mean_std %>% group_by(activity_label,subject) %>% summarise_each(funs(mean)))
 write.table(DT_new,"./UCI_HAR_Dataset.txt",row.names = FALSE)
