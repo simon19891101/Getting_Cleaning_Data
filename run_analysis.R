@@ -28,4 +28,4 @@ DT_merge <- rbind(DT_test,DT_train)
 DT_merge <- setnames(DT_merge,grep("^V",names(DT_merge)),as.character(DT_feature$V2))
 DT_merge_mean_std <- DT_merge[,c(grep("*[mM][eE][aA][nN]*|*[sS][tT][dD]*",DT_feature$V2,value=TRUE),"activity_label","subject")]
 DT_new <- as.data.table(DT_merge_mean_std %>% group_by(activity_label,subject) %>% summarise_each(funs(mean)))
-write.table(DT_new,"./UCI_HAR_Dataset.txt")
+write.table(DT_new,"./UCI_HAR_Dataset.txt",row.names = FALSE)
