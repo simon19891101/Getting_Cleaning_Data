@@ -1,14 +1,14 @@
 # Getting_Cleaning_Data
 Getting and Cleaning Data Project
 
-run_analysis.R processes raw data of UCI HAR Dataset to a new, clean, and tidy data set called "UCI_HAR_Dataset.txt"
+run_analysis.R processes raw data of UCI HAR Dataset to a new, clean, and tidy data set called "UCI_HAR_Dataset.txt"  
 
-loading data:
-line 15 - 22: load data from raw data set to the following variables
-DT_test: test data set
-LB_test: activity labels of test set
-SB_test: subjects of test set
-DT_train: training data set
+loading data:  
+line 15 - 22: load data from raw data set to the following variables  
+DT_test: test data set  
+LB_test: activity labels of test set  
+SB_test: subjects of test set  
+DT_train: training data set  
 LB_train: activity labels of training set
 SB_train: subjects of training set
 DT_feature: features of both test data set and training data set
